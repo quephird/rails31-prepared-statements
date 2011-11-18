@@ -1,0 +1,20 @@
+.selectSQL, .insertSQL, .updateSQL, .deleteSQL {
+    font-family: courier ;
+    font-size: 12px ;
+}
+
+.selectSQL {
+    color: #FF0000 ;
+}
+
+.insertSQL {
+    color: #00FF00 ;
+}
+
+.updateSQL {
+    color: #FF7700 ;
+}
+
+.deleteSQL {
+    color: #0000FF ;
+}

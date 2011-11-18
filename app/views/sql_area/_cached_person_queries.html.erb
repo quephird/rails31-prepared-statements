@@ -1,0 +1,17 @@
+<table>
+<% @cached_person_queries.each do |q| %>
+    <tr>
+        <% if q["sql_text"] =~ /SELECT/ %>
+            <td class="selectSQL">
+        <% elsif q["sql_text"] =~ /INSERT/ %>
+            <td class="insertSQL">
+        <% elsif q["sql_text"] =~ /UPDATE/ %>
+            <td class="updateSQL">
+        <% elsif q["sql_text"] =~ /DELETE/ %>
+            <td class="deleteSQL">
+        <% end %>
+            <%= q["sql_text"] %>
+        </td>
+    </tr>
+<% end %>
+</table>

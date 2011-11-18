@@ -1,0 +1,7 @@
+local:
+  adapter: oracle_enhanced
+  database: localhost/XE
+  username: rails31
+  password: rails31
+  pool: 1
+  timeout: 5000

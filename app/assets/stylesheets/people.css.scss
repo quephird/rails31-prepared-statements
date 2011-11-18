@@ -1,0 +1,97 @@
+// Place all the styles related to the people controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: #685642 ;
+    color: #333;
+    font-family: Palatino Linotype, Palatino, serif ;
+    text-align: center ;
+}
+
+#content {
+    margin:0 auto;
+    text-align: left ;
+    width: 800px;
+}
+
+#header {
+    background-color: #F4F0CB ;
+    border: solid 3px black;
+    border-radius: 8px;
+    line-height: 25px ;
+    text-align: center ;
+    width: 800px ;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+fieldset, legend {
+    background-color: #F4F0CB ;
+    border: solid 3px black;
+    border-radius: 8px;
+    padding: 5px ;
+    width: 100% ;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+legend {
+    background-color: #DED29E ;
+    font-size: 18px ;
+    font-weight: bold ;
+    width: auto ;
+}
+
+#people-fields, #cached-queries {
+    margin: 0 0 20px;
+    padding: 10px ;
+}
+
+#sql-area-actions:after {
+    clear: both ;
+    content: "." ;
+    display: block ;
+    height: 0 ;
+    visibility: hidden ;
+}
+
+.button_to {
+    float: left ;
+    width: auto ;
+    position: relative ;
+    margin-right: 10px ;
+}
+
+input[type="submit"] {
+    background-color: #B3A580 ;
+    font-family: Palatino Linotype, Palatino, serif ;
+    font-size: 14px ;
+}
+
+.field {
+    float: left ;
+    width: auto ;
+    position: relative ;
+    margin-right: 10px ;
+}
+
+.person-action-button {
+    float: left ;
+    width: auto ;
+    position: relative ;
+    margin-right: 10px ;
+}
+
+th {
+    text-align: left ;
+}
+
+.person-name {
+    text-align: left ;
+    width: 150px ;
+}

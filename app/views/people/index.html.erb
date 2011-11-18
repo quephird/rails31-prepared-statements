@@ -1,0 +1,38 @@
+<div id="content">
+    <div id="header">
+        <h1>Demonstration of Rails 3.1/ActiveRecord and Oracle</h1>
+    </div>
+
+<fieldset id='people-fields'>
+    <legend>People</legend>
+    <table id="people">
+        <tr>
+            <th>Last name</th>
+            <th>First name</th>
+            <th>Ssn</th>
+            <th>Age</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+
+        <% @people.each do |person| %>
+            <%= render :partial => 'person', :locals => {:person => person} %>
+        <% end %>
+    </table>
+
+    <%= button_to "Create new person", {:controller => :people, :action => :new}, {:remote => true, :method => :get, :id => 'new-person-button'} %>
+    <div id="person-form-area"></div>
+</fieldset>
+
+<fieldset id="cached-queries">
+    <legend>Oracle SQL query cache</legend>
+    <div id="sql-area-actions">
+        <%= button_to "Show cached queries", {:controller => :sql_area, :action => :cached_person_queries}, {:remote => true, :method => :get, :id => 'cached-queries-button'} %>
+        <%= button_to "Flush query cache", {:controller => :sql_area, :action => :flush_query_cache}, {:remote => true, :method => :post} %>
+        <%= button_to "Set cursor sharing to EXACT", {:controller => :sql_area, :action => :set_cursor_sharing_to_exact}, {:remote => true, :method => :post} %>
+        <%= button_to "Set cursor sharing to FORCE", {:controller => :sql_area, :action => :set_cursor_sharing_to_force}, {:remote => true, :method => :post} %>
+    </div>
+
+    <div id="cached_person_queries"></div>
+</fieldset>
+</div>

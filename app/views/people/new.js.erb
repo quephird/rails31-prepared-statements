@@ -1,0 +1,2 @@
+$("#new-person-button").hide()
+$("#person-form-area").html("<%= escape_javascript(render(:partial => "form", :locals => { :person => @person })) %>")
