@@ -47,6 +47,15 @@ legend {
     width: auto ;
 }
 
+
+#people-actions:after {
+    clear: both ;
+    content: "." ;
+    display: block ;
+    height: 0 ;
+    visibility: hidden ;
+}
+
 #people-fields, #cached-queries {
     margin: 0 0 20px;
     padding: 10px ;
@@ -67,7 +76,7 @@ legend {
     margin-right: 10px ;
 }
 
-input[type="submit"] {
+input[type="submit"], button[type="submit"] {
     background-color: #B3A580 ;
     font-family: Palatino Linotype, Palatino, serif ;
     font-size: 14px ;

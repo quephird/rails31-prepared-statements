@@ -28,7 +28,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-#      format.json { render json: @person }
+#      format.json { render json: @people }
       format.js
     end
   end
@@ -38,8 +38,8 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
 
     respond_to do |format|
-      format.html # new.html.erb
-#      format.json { render json: @person }
+#      format.html # new.html.erb
+#      format.json { render json: @people }
       format.js
     end
   end
@@ -52,11 +52,11 @@ class PeopleController < ApplicationController
     respond_to do |format|
       if @person.save
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
-#        format.json { render json: @person, status: :created, location: @person }
+#        format.json { render json: @people, status: :created, location: @people }
         format.js
       else
         format.html { render action: "new" }
-#        format.json { render json: @person.errors, status: :unprocessable_entity }
+#        format.json { render json: @people.errors, status: :unprocessable_entity }
         format.js
       end
     end
@@ -88,6 +88,19 @@ class PeopleController < ApplicationController
       format.html { redirect_to people_url }
 #      format.json { head :ok }
       format.js   { render :nothing => true }
+    end
+  end
+
+  def filter_form
+  end
+
+  def filter
+    @people = Person.find_by_last_name('kefford')
+
+    # TODO: Need filter.js.erb and _filter.html.erb to apply filter
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 end

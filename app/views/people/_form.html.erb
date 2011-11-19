@@ -1,18 +1,15 @@
-<%= form_for(@person, :remote => true, :html => { :id => "person-form-area" }) do |f| %>
+<%= form_for(person, :remote => true, :html => { :id => "people-form" }) do |f| %>
+
   <div class="field">
-    <%= f.label :last_name %><br />
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :ssn %><br />
     <%= f.text_field :ssn, :size => 11 %>
   </div>
   <div class="field">
-    <%= f.label :age %><br />
     <%= f.text_field :age, :size => 3 %>
   </div>
     <div class="person-action-button">

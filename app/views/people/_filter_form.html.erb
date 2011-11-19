@@ -1,0 +1,21 @@
+<%= form_tag '/people/filter', :method => :get, :remote => true, :html => { :id => "people-filter-form" } %>
+
+  <div class="field">
+    <%= text_field_tag :last_name %>
+  </div>
+  <div class="field">
+    <%= text_field_tag :first_name %>
+  </div>
+  <div class="field">
+    <%= text_field_tag :ssn %>
+  </div>
+  <div class="field">
+    <%= text_field_tag :age %>
+  </div>
+    <div class="person-action-button">
+      <%= submit_tag 'Apply' %>
+    </div>
+
+<div class="person-action-button">
+  <%= button_tag 'Cancel', :id => 'cancel-button' %>
+</div>

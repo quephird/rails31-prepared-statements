@@ -16,6 +16,11 @@ $(document).ready(function() {
         $('#cached-queries-button').trigger('click') ;
     });
 
+    $(document).delegate('.edit-person-link', 'click', function() {
+        $(this).closest('tr').load($(this).attr('href'));
+        return false ;
+    });
+
     $(document).delegate('#cancel-button', 'click', function() {
         $("#person-form-area").html("") ;
         $("#new-person-button").show() ;

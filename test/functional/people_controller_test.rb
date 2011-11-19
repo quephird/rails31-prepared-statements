@@ -16,7 +16,7 @@ class PeopleControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create person" do
+  test "should create people" do
     assert_difference('Person.count') do
       post :create, person: @person.attributes
     end
@@ -24,7 +24,7 @@ class PeopleControllerTest < ActionController::TestCase
     assert_redirected_to person_path(assigns(:person))
   end
 
-  test "should show person" do
+  test "should show people" do
     get :show, id: @person.to_param
     assert_response :success
   end
@@ -34,12 +34,12 @@ class PeopleControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update person" do
+  test "should update people" do
     put :update, id: @person.to_param, person: @person.attributes
     assert_redirected_to person_path(assigns(:person))
   end
 
-  test "should destroy person" do
+  test "should destroy people" do
     assert_difference('Person.count', -1) do
       delete :destroy, id: @person.to_param
     end

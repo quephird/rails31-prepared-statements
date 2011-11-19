@@ -1,5 +1,10 @@
 Rails31PreparedStatements::Application.routes.draw do
-  resources :people
+  resources :people do
+    collection do
+      get "filter_form"
+      get "filter"
+    end
+  end
 
   get "sql_area/cached_person_queries"
 

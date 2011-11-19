@@ -5,8 +5,14 @@
 
 <fieldset id='people-fields'>
     <legend>People</legend>
+    <div id="people-actions">
+        <%= button_to "Create new people", {:controller => :people, :action => :new}, {:remote => true, :method => :get, :id => 'new-person-button'} %>
+        <%= button_to "Filter people", {:controller => :people, :action => :filter_form}, {:remote => true, :method => :get, :id => 'people-filter-button'} %>
+    </div>
+
     <table id="people">
         <tr>
+            <th>&nbsp;</th>
             <th>Last name</th>
             <th>First name</th>
             <th>Ssn</th>
@@ -20,7 +26,6 @@
         <% end %>
     </table>
 
-    <%= button_to "Create new person", {:controller => :people, :action => :new}, {:remote => true, :method => :get, :id => 'new-person-button'} %>
     <div id="person-form-area"></div>
 </fieldset>
 
