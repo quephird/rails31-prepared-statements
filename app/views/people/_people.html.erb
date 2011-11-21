@@ -1,0 +1,15 @@
+<table id="people">
+    <tr>
+        <th>&nbsp;</th>
+        <th>Last name</th>
+        <th>First name</th>
+        <th>Ssn</th>
+        <th>Age</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+
+    <% @people.each do |person| %>
+        <%= render :partial => 'person', :locals => {:person => person} %>
+    <% end %>
+</table>

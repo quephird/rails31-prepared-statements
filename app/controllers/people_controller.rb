@@ -95,9 +95,18 @@ class PeopleController < ApplicationController
   end
 
   def filter
-    @people = Person.find_by_last_name('kefford')
+    filter_params = params.select {|k,v| k =~ /filter/ && v != ""}
+    if filter_params.size > 0
+      filter_names = filter_params.keys.map {|k| k.slice(7..-1)}
+      filter_values = filter_params.values
+      filter_method = "find_all_by_" + filter_names.join("_and_")
+      @people = Person.send filter_method, *filter_values
+    else
+      @people = Person.all
+    end
 
-    # TODO: Need filter.js.erb and _filter.html.erb to apply filter
+#    @people = Person.find_all_by_age(50)
+
     respond_to do |format|
       format.html
       format.js

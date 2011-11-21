@@ -1,8 +1,6 @@
 <%= form_for(@person, :remote => true, :html => { :id => "people-form-row" }) do |f| %>
-    Testing one two three
     <%= f.text_field :last_name %>
-
-      <%= f.submit 'Save' %>
+    <%= f.submit 'Save' %>
 <% end %>
 
 <div class="person-action-button">

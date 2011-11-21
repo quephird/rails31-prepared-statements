@@ -10,21 +10,9 @@
         <%= button_to "Filter people", {:controller => :people, :action => :filter_form}, {:remote => true, :method => :get, :id => 'people-filter-button'} %>
     </div>
 
-    <table id="people">
-        <tr>
-            <th>&nbsp;</th>
-            <th>Last name</th>
-            <th>First name</th>
-            <th>Ssn</th>
-            <th>Age</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-        </tr>
-
-        <% @people.each do |person| %>
-            <%= render :partial => 'person', :locals => {:person => person} %>
-        <% end %>
-    </table>
+    <div id="people-rows">
+        <%= render :partial => 'people' %>
+    </div>
 
     <div id="person-form-area"></div>
 </fieldset>

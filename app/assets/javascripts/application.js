@@ -25,4 +25,15 @@ $(document).ready(function() {
         $("#person-form-area").html("") ;
         $("#new-person-button").show() ;
     });
+
+    $(document).delegate('#people-filter-form', 'ajax:success', function() {
+        $('#cached-queries-button').trigger('click') ;
+    });
+    $(document).delegate('#filter-cancel-button', 'click', function() {
+        $("#filter_last_name").val("") ;
+        $("#filter_first_name").val("") ;
+        $("#filter_ssn").val("") ;
+        $("#filter_age").val("") ;
+        $("#person-form-area").html("") ;
+    });
 }) ;
