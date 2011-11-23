@@ -15,10 +15,11 @@ class PeopleController < ApplicationController
   def show
     @person = Person.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @person }
-    end
+    render :partial => 'person', :locals => { :person => @person }
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.json { render json: @person }
+#    end
   end
 
   # GET /people/new
@@ -37,11 +38,11 @@ class PeopleController < ApplicationController
   def edit
     @person = Person.find(params[:id])
 
-    respond_to do |format|
+    render :partial => 'form', :locals => { :person => @person }
+#    respond_to do |format|
 #      format.html # new.html.erb
-#      format.json { render json: @people }
-      format.js
-    end
+#      format.js
+#    end
   end
 
   # POST /people
@@ -104,8 +105,6 @@ class PeopleController < ApplicationController
     else
       @people = Person.all
     end
-
-#    @people = Person.find_all_by_age(50)
 
     respond_to do |format|
       format.html

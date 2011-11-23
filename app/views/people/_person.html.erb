@@ -1,10 +1,8 @@
-<tr>
-    <td>&nbsp;</td>
+<tr id="person-row">
     <td class="person-name"><%= person.last_name %></td>
     <td class="person-name"><%= person.first_name %></td>
-    <td><%= person.ssn %></td>
-    <td><%= person.age %></td>
-    <td><%= link_to 'Edit', edit_person_path(person), :class => 'edit-person-link' %></td>
+    <td class="person-ssn"><%= person.ssn %></td>
+    <td class="person-age"><%= person.age %></td>
+    <td><%= button_to 'Edit', edit_person_path(person), {:method => :get, :class => 'edit-person-button', :url => edit_person_path(person)} %></td>
     <td><%= button_to "Delete", person_path(person), {:confirm => 'Are you sure?', :remote => true, :method => :delete, :form_class => 'delete-person-form'} %>
 </tr>
-

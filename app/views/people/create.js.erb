@@ -1,7 +1,6 @@
 <%- if @person.valid? %>
   $("#people").find('tbody').append("<%= escape_javascript(render(:partial => 'person', :locals => { :person => @person })) %>") ;
   $("#person-form-area").html("") ;
-  $("#new-person-button").show() ;
   $('#cached-queries-button').trigger('click') ;
 <%- else %>
   $("#person-form-area").html("<%= escape_javascript(render(:partial => 'form', :locals => { :person => @person })) %>")

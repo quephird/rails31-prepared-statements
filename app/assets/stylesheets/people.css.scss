@@ -20,6 +20,7 @@ body {
     border: solid 3px black;
     border-radius: 8px;
     line-height: 25px ;
+    margin: 20px ;
     text-align: center ;
     width: 800px ;
     -moz-border-radius: 8px;
@@ -44,6 +45,7 @@ legend {
     background-color: #DED29E ;
     font-size: 18px ;
     font-weight: bold ;
+    padding: 5px 20px ;
     width: auto ;
 }
 
@@ -76,7 +78,7 @@ legend {
     margin-right: 10px ;
 }
 
-input[type="submit"], button[type="submit"] {
+input[type="submit"], button {
     background-color: #B3A580 ;
     font-family: Palatino Linotype, Palatino, serif ;
     font-size: 14px ;
@@ -102,5 +104,15 @@ th {
 
 .person-name {
     text-align: left ;
-    width: 150px ;
+    width: 200px ;
+}
+
+.person-ssn {
+    text-align: left ;
+    width: 100px ;
+}
+
+.person-age {
+    text-align: left ;
+    width: 50px ;
 }

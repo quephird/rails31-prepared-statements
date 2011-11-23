@@ -16,8 +16,8 @@ $(document).ready(function() {
         $('#cached-queries-button').trigger('click') ;
     });
 
-    $(document).delegate('.edit-person-link', 'click', function() {
-        $(this).closest('tr').load($(this).attr('href'));
+    $(document).delegate('.edit-person-button', 'click', function() {
+        $(this).closest('tr').load($(this).attr('url'));
         return false ;
     });
 
@@ -26,14 +26,29 @@ $(document).ready(function() {
         $("#new-person-button").show() ;
     });
 
+    $(document).delegate('.edit_person', 'ajax:success', function() {
+        $('#cached-queries-button').trigger('click') ;
+    });
+
+    $(document).delegate('.update-cancel-button', 'click', function(event) {
+        $.ajax({
+            url: $(event.currentTarget).attr('url'),
+            success: function(data) {
+                $(event.currentTarget).closest('tr').replaceWith(data);
+            }
+        }) ;
+    });
+
     $(document).delegate('#people-filter-form', 'ajax:success', function() {
         $('#cached-queries-button').trigger('click') ;
     });
+
     $(document).delegate('#filter-cancel-button', 'click', function() {
         $("#filter_last_name").val("") ;
         $("#filter_first_name").val("") ;
         $("#filter_ssn").val("") ;
         $("#filter_age").val("") ;
+        $('#filter-apply-button').trigger('click') ;
         $("#person-form-area").html("") ;
     });
 }) ;
