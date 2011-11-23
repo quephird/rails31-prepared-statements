@@ -1,23 +1,15 @@
 <%= form_tag '/people/filter', :method => :get, :remote => true, :id => "people-filter-form" do %>
 
-<div class="field">
-    <%= text_field_tag :filter_last_name %>
-</div>
-<div class="field">
-    <%= text_field_tag :filter_first_name %>
-</div>
-<div class="field">
-    <%= text_field_tag :filter_ssn %>
-</div>
-<div class="field">
-    <%= text_field_tag :filter_age %>
-</div>
-<div class="person-action-button">
-    <%= submit_tag 'Apply', :id => 'filter-apply-button' %>
-</div>
+    <%= text_field_tag 'filter_last_name', nil, :class => 'person-name' %>
 
-<div class="person-action-button">
+    <%= text_field_tag 'filter_first_name', nil, :class => 'person-name' %>
+
+    <%= text_field_tag 'filter_ssn', nil, :class => 'person-ssn' %>
+
+    <%= text_field_tag 'filter_age', nil, :class => 'person-age' %>
+
+    <%= submit_tag 'Apply', :id => 'filter-apply-button' %>
+
     <%= button_tag 'Cancel', :id => 'filter-cancel-button', :type => 'button' %>
-</div>
 
 <% end %>
