@@ -84,6 +84,10 @@ input[type="submit"], button {
     font-size: 14px ;
 }
 
+td input[type="submit"], td button {
+    width: 80px ;
+}
+
 .field {
     float: left ;
     width: auto ;
@@ -102,6 +106,10 @@ th {
     text-align: left ;
 }
 
+td {
+    vertical-align: middle ;
+}
+
 .person-name {
     text-align: left ;
     width: 200px ;
@@ -115,4 +123,8 @@ th {
 .person-age {
     text-align: left ;
     width: 50px ;
+}
+
+.button-column {
+    width: 90px ;
 }

@@ -3,25 +3,25 @@
         <table>
             <tr>
                 <td class="person-name">
-                    <%= f.text_field :last_name %>
+                    <%= f.text_field :last_name, :size => 22 %>
                 </td>
                 <td class="person-name">
-                    <%= f.text_field :first_name %>
+                    <%= f.text_field :first_name, :size => 22 %>
                 </td>
                 <td class="person-ssn">
                     <%= f.text_field :ssn, :size => 11 %>
                 </td>
                 <td class="person-age">
-                    <%= f.text_field :age, :size => 3 %>
+                    <%= f.text_field :age, :size => 2 %>
                 </td>
-                <td>
+                <td class="button-column">
                     <%= f.submit 'Save'  %>
                 </td>
             </tr>
         </table>
     <% end %>
 </td>
-<td>
+<td class="button-column">
     <% if person.persisted? %>
        <%= button_tag 'Done', :class => 'update-cancel-button', :url => person_path(person) %>
     <% else %>
