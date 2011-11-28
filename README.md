@@ -23,7 +23,7 @@ select person.* from person where id = 314
 select person.* from person where id = 42  
 
 Each of these queries would result in a parse, a separate query plan, and a distinct area of memory in Oracle's query cache.
-Ideally, even though an application may issue these three queries, the same query, and its resultant plan, ought to be used such as below:
+Ideally, even though an application may issue these three slightly different queries, the same parsed query and its resultant execution plan ought to be used such as the one below:
 
 select person.* from person where id = :id
 
@@ -55,6 +55,11 @@ Needless to say, you are unlikely to be able to run this application against any
 
 So, I wanted to create a simple application that allowed one to perform CRUD against the database, as well as execute a set of ad hoc queries, and see the resultant state of Oracle's query cache.
 I wanted to be able to verify the behavior of ActiveRecord 3.1 as stated in the release notes, and also wanted to be able to demonstrate the difference in behavior between the two cursor sharing strategies.
+
+The application has just one simple screen to allow creation, updating, deleting, and filtering of person records.
+All resultant parsed queries are displayed in the bottom half of the screen.
+This allows the developer to instantly see in one place what happens inside the database rather than having to toggle between an edit screen and a tool such as TOAD to inspect the query cache.
+(Or even worse, being reliant on a curmudgeonly DBA to tell you what is going on inside Oracle.)
 
 ## Useful links
 
